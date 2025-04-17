@@ -40,8 +40,8 @@ df.loc[df['sentiment'] == 'hate', 'sentiment'] = 'anger'
 df.loc[df['sentiment'] == 'boredom', 'sentiment'] = 'neutral'
 df.loc[df['sentiment'] == 'enthusiasm', 'sentiment'] = 'fun'
 sentimentlabels=df.sentiment.unique()
-text=df['content']
-sentiment=df['sentiment']
+text=df['content'][0:2000] #5% de la base de datos 
+sentiment=df['sentiment'][0:2000]
 print(sentiment.unique())
 sentiment.replace(sentiment.unique(),range(9),inplace=True)
 print(sentiment.shape,text.shape)
